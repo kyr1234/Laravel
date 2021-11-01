@@ -1,8 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Users; 
+use App\Http\Controllers\Users;
 use App\Http\Controllers\UsersViewController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FormValidator;
+use App\Http\Controllers\CallForm;
+use Symfony\Component\Routing\Router;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +23,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//DYNAMIC DATA ROUTES
+Route::post("users",[FormValidator::class,"index"]);
+Route::get('form',CallForm::class,"index");
 
+//the route middlwware takes the value of the key name in the kernal
+Route::view('route', 'route')->middleware("routemiddleware");
+
+
+
+
+//GROUP MIDDLEWARE
+Route::middleware(['middleware', 'groupmiddleware'])->group(function () {
+    Route::view("header","header");
+    Route::view("footer","footer");
+});
+    
+
+
+
+
+
+//DYNAMIC DATA ROUTES
+/*
 Route::get('contact/{name}',function($name){
 return view('contact',['name'=>$name]);
 });
@@ -42,3 +67,7 @@ Route::get("users/{name}",[Users::class,'index']);
 
 
 Route::get("userview/{name}",[UsersViewController::class,"viewfromcontroller"]);
+
+
+Route::get("aboutcontroller",[AboutController::class,"aboutpage"]);*/
+
