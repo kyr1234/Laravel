@@ -32,6 +32,6 @@ class CreateTestTable extends Migration
     }
 }
 
-//php artisan make:Migration create_tablename_table is used to  create table
+//php artisan make:Migration create_tablename_table is used to  create table~
 //php artisan migrate:reset is used to reset the databse to its original state which was before the first migrate
 //php artisan migrate:rollback is used to remove the last migrated table only not to the default databse
