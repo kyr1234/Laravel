@@ -20,6 +20,7 @@ use App\Http\Controllers\listFromDb;
 use App\Http\Controllers\Deletefromdb;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\dbquery;
+use App\Http\Controllers\JoinController;
 
 
 //database related routes
@@ -35,6 +36,9 @@ Route::post('dataupdate', UpdateController::class,"update");
  //dbquery
 
  Route::get('aggrregate',[dbquery::class,"aggregate"]);
+Route::get('join',[JoinController::class,"index"]);
+
+//JOIN WITH TABLES
 
 
 /* 
@@ -56,7 +60,7 @@ Route::post('fileupload', [FileUpload::class,"index"]);
 Route::get('/', function () {
     return view('welcome',["name"=>"yug","age"=>10]);
 });
-
+                `   ``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````Q````QAA1AQ1QA``` 
 
 
 
@@ -98,9 +102,6 @@ Route::get("loginSession",function(){
     }
     return redirect("FormValidateSession");
 });
-
-
-
 
 
 
