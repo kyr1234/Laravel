@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class Users extends Controller
 {
     //
-    function index($name){
+    function index(Request $name){
         echo $name;
         echo "WELCOME FROM CONTROLLER";
     }

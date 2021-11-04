@@ -40,6 +40,7 @@ class Kernel extends HttpKernel
         ],
 'routemiddleware'=>[
             \App\Http\Middleware\RouteMiddleware::class,
+
 ],
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,

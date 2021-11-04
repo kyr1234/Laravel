@@ -18,6 +18,7 @@ class AccessMiddleware
     {
         if($request->age && $request->age <18 )
         {
+            //route in the parameters
             return redirect("noacess");
         }
         return $next($request);
